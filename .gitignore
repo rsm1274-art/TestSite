@@ -1,0 +1,4 @@
+node_modules/
+# Ignore build output except the compiled stylesheet GitHub Pages serves
+dist/*
+!dist/styles.css

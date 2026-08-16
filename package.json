@@ -1,0 +1,14 @@
+{
+  "name": "qpi-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
+    "dev:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0"
+  }
+}

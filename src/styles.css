@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------
+   QPI shared site styles
+   Compiled into dist/styles.css by `npm run build:css`.
+   Every page links dist/styles.css only — no per-page <style> blocks.
+   --------------------------------------------------------------- */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Body copy uses Barlow (readable at paragraph length).
+     Archivo Black is reserved for headings and short UI labels. */
+  body {
+    font-family: 'Barlow', system-ui, sans-serif;
+    background-color: #050505;
+    color: #ffffff;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .display {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+  }
+
+  .industrial-border {
+    border-left: 4px solid #2563eb;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.45) 0%, rgba(5, 5, 5, 0.85) 55%, rgba(5, 5, 5, 1) 100%);
+  }
+
+  .btn-industrial {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+  }
+
+  .card-dark {
+    background: #0f0f0f;
+    border: 1px solid #1f1f1f;
+    transition: border-color 0.3s ease;
+  }
+
+  .card-dark:hover,
+  .card-dark:focus-within {
+    border-color: #2563eb;
+  }
+
+  /* Long-form article copy on the service pages */
+  .prose-qpi p {
+    color: #cbd5e1;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  .prose-qpi ul {
+    color: #cbd5e1;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+    list-style: disc;
+  }
+
+  .prose-qpi li {
+    margin-bottom: 0.5rem;
+  }
+
+  .prose-qpi h2 {
+    font-size: 1.875rem;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    border-left: 4px solid #2563eb;
+    padding-left: 1rem;
+  }
+
+  .prose-qpi h3 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: #93c5fd;
+  }
+
+  .prose-qpi strong {
+    color: #ffffff;
+  }
+
+  .prose-qpi a {
+    color: #60a5fa;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .prose-qpi a:hover {
+    color: #ffffff;
+  }
+
+  /* Form controls */
+  .field {
+    width: 100%;
+    background: #0f0f0f;
+    border: 1px solid #2a2a2a;
+    color: #ffffff;
+    padding: 0.875rem 1rem;
+    font-family: 'Barlow', system-ui, sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .field::placeholder {
+    color: #64748b;
+  }
+
+  .field:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+  }
+
+  .field[aria-invalid='true'] {
+    border-color: #ef4444;
+  }
+
+  .field-label {
+    display: block;
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+  }
+
+  .field-error {
+    display: none;
+    color: #f87171;
+    font-size: 0.8125rem;
+    margin-top: 0.375rem;
+  }
+
+  .field-error.is-visible {
+    display: block;
+  }
+
+  /* Honeypot — hidden from humans, visible to naive bots */
+  .hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+}

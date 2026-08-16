@@ -1,0 +1,4 @@
+# STAGING SITE — not for indexing.
+# The live site is https://qpi-inspect.com
+User-agent: *
+Disallow: /
