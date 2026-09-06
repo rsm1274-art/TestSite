@@ -35,8 +35,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/favicon.png">
 
-    <!-- Preload the hero image so it arrives with the page instead of after it -->
-    <link rel="preload" as="image" href="assets/hero-van.webp" type="image/webp" fetchpriority="high">
+    <!-- Preload the hero video so it arrives with the page instead of after it -->
+    <link rel="preload" as="video" href="assets/inspection.mp4" type="video/mp4" fetchpriority="high">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -141,17 +141,12 @@
 
     <header class="relative min-h-[85vh] md:min-h-screen flex items-center pt-28 pb-16 md:pt-40 overflow-hidden">
         <div class="absolute inset-0 z-0 bg-slate-900">
-            <picture>
-                <source srcset="assets/hero-van.webp" type="image/webp">
-                <!-- Source is 1600x873. object-position keeps the van in frame on
-                     tall mobile viewports instead of cropping to empty asphalt.
-                     TODO: reshoot / re-export a taller source (min 1600x1600)
-                     so this does not upscale on retina phones. -->
-                <img src="assets/hero-van.jpg" width="1600" height="873"
-                     loading="eager" fetchpriority="high" decoding="async"
-                     class="w-full h-full object-cover object-[60%_center] md:object-center opacity-50 grayscale"
-                     alt="Quality Pipeline Inspectors CCTV inspection van on a job site">
-            </picture>
+            <video autoplay muted loop playsinline preload="auto"
+                   poster="assets/hero-van.jpg" width="1600" height="873"
+                   class="w-full h-full object-cover object-[60%_center] md:object-center opacity-50 grayscale"
+                   aria-label="Quality Pipeline Inspectors CCTV pipeline inspection footage">
+                <source src="assets/inspection.mp4" type="video/mp4">
+            </video>
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
 
